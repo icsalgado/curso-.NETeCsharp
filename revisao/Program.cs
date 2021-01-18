@@ -6,39 +6,41 @@ namespace revisao
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Informe a opção desejada");
-            Console.WriteLine("1 - Inserir novo aluno");
-            Console.WriteLine("2 - Listar alunos");
-            Console.WriteLine("3 - Calcular média geral");
-            Console.WriteLine("X - Sair");
-            
-            Console.WriteLine("__________________________");
+            string opcaoUsuario = obterOpcaoUsuario();
 
-            string opcaoUsuario = Console.ReadLine();
-            
-            while(opcaoUsuario.ToUpper() != "X"){
-                switch(opcaoUsuario){
+            while (opcaoUsuario.ToUpper() != "X")
+            {
+                switch (opcaoUsuario)
+                {
                     case "1":
                         //TODO: adicionar aluno
                         break;
                     case "2":
                         //TODO: listar alunos
-                        break
+                        break;
                     case "3":
                         //TODO: calcular media geral
-                        break
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
-                Console.WriteLine("Informe a opção desejada");
-                Console.WriteLine("1 - Inserir novo aluno");
-                Console.WriteLine("2 - Listar alunos");
-                Console.WriteLine("3 - Calcular média geral");
-                Console.WriteLine("X - Sair");
-
-                opcaoUsuario = Console.ReadLine();
+                opcaoUsuario = obterOpcaoUsuario();
             }
 
+        }
+
+        private static string obterOpcaoUsuario()
+        {
+            Console.WriteLine("Informe a opção desejada");
+            Console.WriteLine("1 - Inserir novo aluno");
+            Console.WriteLine("2 - Listar alunos");
+            Console.WriteLine("3 - Calcular média geral");
+            Console.WriteLine("X - Sair");
+
+            Console.WriteLine("__________________________");
+
+            string opcaoUsuario = Console.ReadLine();
+            return opcaoUsuario;
         }
     }
 }
