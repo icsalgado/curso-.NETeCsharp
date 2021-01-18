@@ -6,6 +6,9 @@ namespace revisao
     {
         static void Main(string[] args)
         {
+
+            Aluno[] alunos = new Aluno[5];
+            var indiceAluno = 0; //serve para ter controle de qual espaço do array vai ser alocado
             string opcaoUsuario = obterOpcaoUsuario();
 
             while (opcaoUsuario.ToUpper() != "X")
@@ -13,6 +16,25 @@ namespace revisao
                 switch (opcaoUsuario)
                 {
                     case "1":
+                        Console.WriteLine("Informe o nome do aluno");
+                        Console.WriteLine("__________________________");
+                        Aluno aluno = new Aluno();//instancia objeto aluno
+                        aluno.Nome = Console.ReadLine();
+
+                        Console.WriteLine("Informe a nota do aluno");
+                        Console.WriteLine("__________________________");
+
+                        //para converter um tipo inteiro para um decimal
+                        if (decimal.TryParse(Console.ReadLine(), out decimal nota)){ //var é uma inferencia de tipo
+                            aluno.Nota = nota;
+                        }
+                        else{
+                            throw new ArgumentOutOfRangeException("Valor da nota deve ser decimal");
+                        }
+
+                        alunos[indiceAluno] = aluno;
+                        indiceAluno++;
+                        
                         //TODO: adicionar aluno
                         break;
                     case "2":
