@@ -13,6 +13,6 @@ namespace curso_mvc.Models
 		[Required(ErrorMessage = "Campo obrigatório")]
 		public string Descricao { get; set; }
 
-		public List<Produto> Produtos { get; set; }
+		//public List<Produto> Produtos { get; set; }
 	}
 }
